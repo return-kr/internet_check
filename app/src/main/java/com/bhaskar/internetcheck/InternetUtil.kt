@@ -5,6 +5,9 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
 
+/**
+ * Function to whether device is connected to the Internet
+ */
 class InternetUtil {
     companion object {
         fun isNetworkAvailable(context: Context?): Boolean {
