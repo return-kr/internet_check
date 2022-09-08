@@ -4,7 +4,7 @@
 
    ```gradle
    dependencies {
-        implementation 'com.github.return-kr:$latest_version'
+        implementation 'com.github.return-kr:internet_check:$latest_stable_version'
    }
    ```
 ### Add the following to the settings.gradle file. ###
@@ -34,10 +34,12 @@ checkInternet?.addOnInternetChangeListener(object: InternetCheckListener {
 ```
 ### Register the broadcast. ###
 ```kotlin
-registerReceiver(checkInternet, IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
+// From activity
+checkInternet?.registerReceiver(this)
 ```
 ### Unregister the broadcast if not needed. ###
 ```kotlin
-unregisterReceiver(checkInternet)
+// From activity
+checkInternet?.unRegisterReceiver(this)
 ```
 ***End of Doc***
